@@ -1,27 +1,13 @@
-# Less AI Demo
+# Lego Image Classify Demo
+This is an onnxruntime-wasm-based image classify demo running on the lego server.
 
-## AI Appliaction Interface(alpha)
+## Build
+```bash
+npm install
 
+node build.js  #output: ./dist/bundle.js
 ```
-AI.txt2img(prompt, n_prompt)
-```
 
-### Example
-
-```
-async function handleEvent(event) {
-  // parse prompt
-  let body = await event.request.json();
-  let data = body["data"]
-
-  // call AI
-  let result = await AI.txt2img(data[0], data[1]);
-
-  event.respondWith(new Response(
-                JSON.stringify(result)));
-}
-
-addEventListener('fetch', (event) => {
-        handleEvent(event);
-});
-```
+## Resources
+- [onnxruntime for web](https://onnxruntime.ai/docs/get-started/with-web.html)
+- [onnxruntime-nextjs-template](https://github.com/microsoft/onnxruntime-nextjs-template)
