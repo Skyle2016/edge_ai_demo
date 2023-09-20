@@ -7,8 +7,9 @@ addEventListener('fetch', event => {
 
 async function handleRequest(event) {
   let image = getImage()
+  let img_url = `https://skltestai.edgeone.app/assets/${image.text}.jpg`
 
-  let ret = await inference(image.value)
+  let ret = await inference(img_url)
   /*
     { text: 'cat', value: 'https://i.imgur.com/CzXTtJV.jpg' }
     [
@@ -40,7 +41,7 @@ async function handleRequest(event) {
 <body>
 
 <h1>inference</h1>
-<image src="${image.value}" height="224" width="224"></image>
+<image src="${img_url}" height="224" width="224"></image>
 <p>${jsonret}</p>
 
 </body>
