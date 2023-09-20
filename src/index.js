@@ -1,15 +1,17 @@
 import { getImage } from "./sample-image-urls.ts"
-import { inference } from "./inference.js"
+import { ai } from "./ai.js"
 
 addEventListener('fetch', event => {
   event.respondWith(handleRequest(event))
 })
 
 async function handleRequest(event) {
-  let image = getImage()
-  let img_url = `https://skltestai.edgeone.app/assets/${image.text}.jpg`
+  ai.appHost = 'https://skltestai.edgeone.app';
 
-  let ret = await inference(img_url)
+  let image = getImage()
+  let img_url = `${ai.appHost}/assets/${image.text}.jpg`
+
+  let ret = await ai.image_classify(img_url)
   /*
     { text: 'cat', value: 'https://i.imgur.com/CzXTtJV.jpg' }
     [
@@ -40,9 +42,10 @@ async function handleRequest(event) {
 </head>
 <body>
 
-<h1>inference</h1>
-<image src="${img_url}" height="224" width="224"></image>
-<p>${jsonret}</p>
+<h1 align="center">image classify</h1>
+<div align="center"><img src="${img_url}" height="224" width="224" /></div>
+<p align="center">${jsonret}</p>
+<div align="center"><button onclick="location.href='${ai.appHost}/functions/run'" type="button">continue</button></div>
 
 </body>
 </html> 
