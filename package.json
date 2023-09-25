@@ -11,6 +11,6 @@
   "dependencies": {
     "@types/emscripten": "^1.39.7",
     "esbuild": "^0.19.2",
-    "lodash": "^4.17.21"
+    "shelljs": "^0.8.5"
   }
 }

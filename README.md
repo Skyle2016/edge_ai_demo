@@ -1,11 +1,11 @@
-# Lego Image Classify Demo
-This is an onnxruntime-wasm-based image classify demo running on the lego server.
+# Wasm Image Classify Demo
+This is an onnxruntime-wasm-based image classify demo.
 
 ## Build
 ```bash
 npm install
 
-node build.js  #output: ./dist/bundle.js
+node build.js YOUR_LESS_APP_HOST  #output: ./dist/bundle.js
 ```
 
 ## Resources

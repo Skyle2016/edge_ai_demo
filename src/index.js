@@ -6,7 +6,7 @@ addEventListener('fetch', event => {
 })
 
 async function handleRequest(event) {
-  ai.appHost = 'https://skltestai.edgeone.app';
+  ai.appHost = 'https://REPLACE_WITH_YOUR_APP_HOST';
 
   let image = getImage()
   let img_url = `${ai.appHost}/assets/${image.text}.jpg`
